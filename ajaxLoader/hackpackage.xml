@@ -1,0 +1,22 @@
+<hackpackage>
+  <name>AjaxLoader</name>
+  <identifier>ajaxloader</identifier>
+  <description>Load Ajax into Div from url specified by the data-url attribute</description>
+  <version>1.0</version>
+  <developerName>Derek Worthen</developerName>
+  <developerEmail>dworthen@wsu.edu</developerEmail>
+  <hook>tag.learningSystemPage.start</hook>
+  <restrictions/>
+  <resources>
+    <resource>
+      <path>includeContent.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+    <resource>
+      <path>ajax-loader.gif</path>
+      <mime>image/gif</mime>
+      <embed>false</embed>
+    </resource>
+  </resources>
+</hackpackage>

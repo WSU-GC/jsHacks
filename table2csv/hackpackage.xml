@@ -1,0 +1,20 @@
+<hackpackage>
+  <name>Table2CSV</name>
+  <identifier>table2csv</identifier>
+  <description>Convert html tables to CSV files</description>
+  <hook>tag.learningSystemPage.start</hook>
+  <restrictions>
+    <restriction>
+      <type>URL</type>
+      <value>.+/webapps/cmsmain/webui/.+</value>
+      <inverse>true</inverse>
+    </restriction>
+  </restrictions>
+  <resources>
+    <resource>
+      <path>tabletocsv.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+  </resources>
+</hackpackage>

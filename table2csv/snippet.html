@@ -1,0 +1,46 @@
+<style>
+    #exportToCsv {
+		display: none;
+	}
+</style>
+<div id="exportToCsv">
+    <a href="#" id="exportToCsvLink">Export to Comma Seperated Value (CSV)</a>
+</div>
+<script type="text/javascript" src="${resourcePath}/tabletocsv.js"></script>
+<script type="text/javascript">
+
+(function() {
+	var resources = [
+		["${resourcePath}/tabletocsv.js", init]
+	];
+
+	function init($) { 
+		var table = document.getElementById("listContainer_datatable");
+			var exportDiv = document.getElementById("exportToCsv");
+			var exportLink = document.getElementById("exportToCsvLink");
+			if (!table) return;
+			$('#exportToCsvLink').click(function() {
+				var csv = $('#listContainer_datatable').table2CSV({
+					delivery: 'value'
+				});
+				var blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
+				saveAs(blob, "data-table-export.csv");
+			});
+			exportDiv.style.display = 'block';
+	}
+
+	document.addEventListener("DOMContentLoaded", function() {
+		(function($) {
+
+			resources.forEach(function(resource) {
+				var localArgs = resource[2] || [];
+				loadResources(resource, [$].concat(localArgs));
+			});
+
+		}(jQuery));
+	});
+
+}());
+
+	
+</script>

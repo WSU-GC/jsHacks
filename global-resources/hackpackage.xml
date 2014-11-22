@@ -1,0 +1,32 @@
+<hackpackage>
+  <name>Global Resources</name>
+  <identifier>globalresources</identifier>
+  <description>Load necessary global resources</description>
+  <version>1.0</version>
+  <developerName>Derek Worthen</developerName>
+  <developerEmail>dworthen@wsu.edu</developerEmail>
+  <hook>jsp.topFrame.start</hook>
+  <restrictions/>
+  <resources>
+    <resource>
+      <path>jquery.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+    <resource>
+      <path>load.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+     <resource>
+      <path>filesaver.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+     <resource>
+      <path>blob.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+  </resources>
+</hackpackage>

@@ -1,0 +1,20 @@
+<!-- This snippet binds a function to the "dom:loaded" event.
+You can put your own javascript into the function, or replace
+the entire snippet. -->
+<script type="text/javascript">
+   document.addEventListener("DOMContentLoaded", function() {
+       (function($) {
+            $('.MediaCenterPopup').click(function(e) {
+                e.preventDefault();
+        		var $el = $(this);
+        		console.log();
+        		$.fancybox($el.attr('href'), {
+        			type: $el.attr('data-type'),
+        			width: '98%',
+        			height: '98%',
+        			titleShow: false
+        		});
+        	});   
+       }(jQuery));
+    });
+</script>

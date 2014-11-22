@@ -1,0 +1,11 @@
+<hackpackage>
+  <name>Load Media</name>
+  <identifier>loadmedia</identifier>
+  <description>Load Media</description>
+  <version>1.0.0</version>
+  <developerName>Derek Worthen</developerName>
+  <developerEmail>dworthen@wsu.edu</developerEmail>
+  <hook>tag.learningSystemPage.start</hook>
+  <restrictions/>
+  <resources/>
+</hackpackage>

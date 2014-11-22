@@ -1,0 +1,14 @@
+<hackpackage>
+  <name>Mithril</name>
+  <identifier>mithril</identifier>
+  <description>Mithril MVC framework</description>
+  <hook>tag.learningSystemPage.start</hook>
+  <restrictions/>
+  <resources>
+    <resource>
+      <path>mithril.min.js</path>
+      <mime>application/javascript</mime>
+      <embed>false</embed>
+    </resource>
+  </resources>
+</hackpackage>
