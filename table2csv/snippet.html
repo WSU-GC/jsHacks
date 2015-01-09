@@ -1,11 +1,6 @@
-<style>
-    #exportToCsv {
-		display: none;
-	}
-</style>
-<div id="exportToCsv">
+<!-- <div id="exportToCsv">
     <a href="#" id="exportToCsvLink">Export to Comma Seperated Value (CSV)</a>
-</div>
+</div>-->
 <script type="text/javascript" src="${resourcePath}/tabletocsv.js"></script>
 <script type="text/javascript">
 
@@ -16,17 +11,24 @@
 
 	function init($) { 
 		var table = document.getElementById("listContainer_datatable");
-			var exportDiv = document.getElementById("exportToCsv");
-			var exportLink = document.getElementById("exportToCsvLink");
+			//var exportDiv = document.getElementById("exportToCsv");
+			//var exportLink = document.getElementById("exportToCsvLink");
+			var exportDiv = document.createElement('div');
+			var exportLink = document.createElement('a');
+			exportLink.setAttribute('href', '#');
+			exportLink.setAttribute('id', 'exportToCsvLink');
+			exportLink.innerHTML = 'Export to CSV'
+			exportDiv.appendChild(exportLink);
 			if (!table) return;
-			$('#exportToCsvLink').click(function() {
+			table.parentNode.insertBefore(exportDiv, table);
+			$(exportLink).click(function() {
 				var csv = $('#listContainer_datatable').table2CSV({
 					delivery: 'value'
 				});
 				var blob = new Blob([csv], {type: "text/plain;charset=utf-8"});
 				saveAs(blob, "data-table-export.csv");
 			});
-			exportDiv.style.display = 'block';
+			//exportDiv.style.display = 'block';
 	}
 
 	document.addEventListener("DOMContentLoaded", function() {

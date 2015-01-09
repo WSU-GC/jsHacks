@@ -1,0 +1,22 @@
+<hackpackage>
+  <name>Collapse-Expand</name>
+  <identifier>collapse</identifier>
+  <description>Accordian style js menu</description>
+  <version>1.0.0</version>
+  <developerName>Derek Worthen</developerName>
+  <developerEmail>dworthen@wsu.edu</developerEmail>
+  <hook>tag.learningSystemPage.start</hook>
+  <restrictions/>
+  <resources>
+    <resource>
+      <path>hidden_arrow.png</path>
+      <mime>image/png</mime>
+      <embed>false</embed>
+    </resource>
+    <resource>
+      <path>show_arrow.png</path>
+      <mime>image/png</mime>
+      <embed>false</embed>
+    </resource>
+  </resources>
+</hackpackage>

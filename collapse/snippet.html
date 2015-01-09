@@ -1,0 +1,56 @@
+<!-- This snippet binds a function to the "dom:loaded" event.
+You can put your own javascript into the function, or replace
+the entire snippet. -->
+<style>
+.collapseMenu > li
+{
+	margin: 0 0 20px 0 !important;
+	padding-left: 20px !important;
+}
+
+.collapseMenu ul li 
+{
+	margin: 0;
+	padding-left: 0;
+}
+
+.collapseMenu { list-style: none !important; }
+.collapseMenu > li.max { background: url('${resourcePath}/hidden_arrow.png') no-repeat left 2px; }
+.collapseMenu > li.min { background: url('${resourcePath}/show_arrow.png') no-repeat left 2px; }
+
+.expand {
+	color: #990000;
+	font-size: 15px;
+	font-weight: bold;
+	margin-left: -20px;
+	padding-left: 20px;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.expand:hover {
+	color: #5fb4e6;
+}
+
+.collapse { display: none; }
+</style>
+<script type="text/javascript">
+   document.addEventListener("DOMContentLoaded", function() {
+       (function($) {
+    	   //$(function() {
+	    	   $(document).on('click', '.collapseMenu>li', function (ev) {
+		            if (ev.target.className === 'expand') {
+		                $(this).find('div').toggleClass('collapse');
+		                $(this).toggleClass('max').toggleClass('min');
+		            }
+		        });
+	           $(document).on('mouseenter', '.expand', function (ev) {
+	               document.body.style.cursor = "pointer";
+		        });
+	           $(document).on('mouseleave', '.expand', function (ev) {
+		            document.body.style.cursor = "default";
+		        }); 
+    	   //});
+       }(jQuery));
+    });
+</script>

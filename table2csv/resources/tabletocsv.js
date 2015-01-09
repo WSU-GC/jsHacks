@@ -43,7 +43,7 @@ jQuery.fn.table2CSV = function(options) {
     }
 
     function row2CSV(tmpRow) {
-        var tmp = tmpRow.join('') // to remove any blank rows
+        var tmp = tmpRow;// = tmpRow.join('') // to remove any blank rows
         // alert(tmp);
         if (tmpRow.length > 0 && tmp != '') {
             var mystr = tmpRow.join(options.separator);
@@ -60,7 +60,7 @@ jQuery.fn.table2CSV = function(options) {
         output = output.replace(/\s+/g, ' ');
         output = output.replace(/\s$/, '');
         output = output.replace(/^\s/, '');
-        if (output == "") return '';
+        //if (output == "") return '';
         return '"' + output + '"';
     }
     function popup(data) {
