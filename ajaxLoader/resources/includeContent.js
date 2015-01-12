@@ -19,7 +19,11 @@ var CDPE = (function($) {
 					jxhr = $.ajax(url);
 
 					jxhr.done(function(msg) {
-						el.html(msg);
+						if ($(msg).find('string').length) {
+							el.html($(msg).text());
+						} else {
+							el.html(msg);							
+						}
 					});
 
 					jxhr.fail(function(xhr, statusText) {
