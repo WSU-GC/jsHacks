@@ -29,7 +29,7 @@ jQuery.fn.table2CSV = function(options) {
     // actual data
     jQuery(el).find('tr').each(function() {
         var tmpRow = [];
-        jQuery(this).filter(':visible').find('td').each(function() {
+        jQuery(this).filter(':visible').find('th, td').each(function() {
             if (jQuery(this).css('display') != 'none') tmpRow[tmpRow.length] = formatData(jQuery(this).html());
         });
         row2CSV(tmpRow);
@@ -55,8 +55,13 @@ jQuery.fn.table2CSV = function(options) {
         var regexp = new RegExp(/["]/g);
         var output = input.replace(regexp, "â€œ");
         //HTML
-        var regexp = new RegExp(/\<[^\<]+\>/g);
-        var output = output.replace(regexp, "");
+        var regexp = new RegExp(/\<([^\s\<]+)[^\<]+\>/g);
+        var r2 = new RegExp(/\>[^\<]+\</);
+        if(!r2.test(output)) {
+        	output = output.replace(regexp, "$1");        	
+        } else {
+        	output = output.replace(regexp, "");
+        }
         output = output.replace(/\s+/g, ' ');
         output = output.replace(/\s$/, '');
         output = output.replace(/^\s/, '');
